@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The NB Glowup | Luxury Indian Bridal & Event Makeup by Junnu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FDF7E7',
+                            300: '#F4D388',
+                            500: '#D4AF37',
+                            600: '#AA8828',
+                            700: '#85681A'
+                        },
+                        maroon: {
+                            700: '#6B1124',
+                            800: '#4A0B18',
+                            900: '#32060E'
+                        },
+                        rose: {
+                            50: '#FFF5F7',
+                            100: '#FFE6EC',
+                            900: '#4A1525'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Indian Bridal Keyframe Animations */
+        @keyframes float-sparkle {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-15px) rotate(180deg) scale(1.2); opacity: 1; }
+        }
+        
+        @keyframes bindi-pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8)); }
+            50% { transform: scale(1.15); filter: drop-shadow(0 0 12px rgba(212, 175, 55, 1)); }
+        }
+
+        @keyframes maang-tikka-swing {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        @keyframes shimmer-gold {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .animate-sparkle {
+            animation: float-sparkle 4s infinite ease-in-out;
+        }
+
+        .animate-bindi {
+            animation: bindi-pulse 2.5s infinite ease-in-out;
+        }
+
+        .animate-tikka {
+            transform-origin: top center;
+            animation: maang-tikka-swing 4s infinite ease-in-out;
+        }
+
+        .gold-shimmer-text {
+            background: linear-gradient(90deg, #D4AF37 0%, #FFF5D1 50%, #D4AF37 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer-gold 4s linear infinite;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .dark-glass {
+            background: rgba(50, 6, 14, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Sparkle canvas styling */
+        #sparkleCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-rose-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Floating Canvas for Golden Sparkles effect -->
+    <div class="relative">
+        
+        <!-- TOP BANNER / NAVIGATION -->
+        <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-gold-500/20 shadow-sm" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <!-- Logo / Brand Name -->
+                    <a href="#" class="flex items-center space-x-3 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center rounded-full bg-maroon-800 border border-gold-500 text-gold-500 shadow-md">
+                            <i class="fa-solid font-serif text-lg">NB</i>
+                            <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gold-500 rounded-full animate-bindi"></div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-maroon-800 group-hover:text-gold-600 transition">THE NB GLOWUP</span>
+                            <span class="text-[10px] tracking-widest text-gold-700 uppercase font-semibold">By Junnu • Bridal Specialist</span>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Navigation Links -->
+                    <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+                        <a href="#about" class="text-slate-700 hover:text-gold-600 transition">About</a>
+                        <a href="#services" class="text-slate-700 hover:text-gold-600 transition">Services</a>
+                        <a href="#gallery" class="text-slate-700 hover:text-gold-600 transition">Lookbook</a>
+                        <a href="#contact" class="text-slate-700 hover:text-gold-600 transition">Contact</a>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hidden sm:flex items-center space-x-4">
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I%20would%20like%20to%20inquire%20about%20makeup%20booking%20for%20my%20event." target="_blank" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Book Now</span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-maroon-800 hover:text-gold-600 focus:outline-none p-2">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-gold-300 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+                <a href="#about" class="block py-2 text-slate-800 font-medium hover:text-gold-600">About Junnu</a>
+                <a href="#services" class="block py-2 text-slate-800 font-medium hover:text-gold-600">Services & Packages</a>
+                <a href="#gallery" class="block py-2 text-slate-800 font-medium hover:text-gold-600">Bridal Lookbook</a>
+                <a href="#contact" class="block py-2 text-slate-800 font-medium hover:text-gold-600">Contact Us</a>
+                <div class="pt-2 flex flex-col space-y-2">
+                    <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I%20would%20like%20to%20inquire%20about%20makeup%20booking%20for%20my%20event." target="_blank" class="w-full flex items-center justify-center space-x-2 bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Junnu (+91 7856958344)</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION WITH INDIAN BRIDAL ANIMATIONS -->
+        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-rose-100 via-rose-50 to-white">
+            <canvas id="sparkleCanvas"></canvas>
+
+            <!-- Decorative Mandala & Bridal Jewelry Animated SVG Elements -->
+            <div class="absolute top-12 left-1/2 -translate-x-1/2 opacity-20 pointer-events-none animate-tikka z-0">
+                <svg width="220" height="280" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Maang Tikka Design -->
+                    <line x1="50" y1="0" x2="50" y2="60" stroke="#D4AF37" stroke-width="2" stroke-dasharray="2 2" />
+                    <circle cx="50" cy="75" r="18" fill="none" stroke="#D4AF37" stroke-width="2" />
+                    <circle cx="50" cy="75" r="8" fill="#6B1124" />
+                    <circle cx="50" cy="100" r="4" fill="#D4AF37" />
+                    <circle cx="35" cy="88" r="3" fill="#D4AF37" />
+                    <circle cx="65" cy="88" r="3" fill="#D4AF37" />
+                </svg>
+            </div>
+
+            <!-- Floating Glow Orbs -->
+            <div class="absolute top-1/4 left-10 w-64 h-64 bg-gold-300/30 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-maroon-700/10 rounded-full blur-3xl animate-pulse"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+                <!-- Bindi Sparkle Graphic -->
+                <div class="inline-flex items-center justify-center mb-6">
+                    <div class="relative">
+                        <div class="w-12 h-12 rounded-full bg-maroon-800 flex items-center justify-center border-2 border-gold-500 shadow-xl">
+                            <!-- Royal Bindi Icon -->
+                            <div class="w-4 h-4 bg-gold-500 rounded-full animate-bindi"></div>
+                        </div>
+                        <!-- Surrounding Petal Accents -->
+                        <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gold-500 rounded-full"></div>
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gold-500 rounded-full"></div>
+                        <div class="absolute top-1/2 -left-2 -translate-y-1/2 w-1.5 h-1.5 bg-gold-500 rounded-full"></div>
+                        <div class="absolute top-1/2 -right-2 -translate-y-1/2 w-1.5 h-1.5 bg-gold-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <h2 class="font-script text-3xl sm:text-5xl text-gold-600 mb-2">Unveil Your Divine Royal Elegance</h2>
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-maroon-900 mb-6 uppercase leading-tight">
+                    THE NB GLOWUP <br><span class="gold-shimmer-text">BY JUNNU</span>
+                </h1>
+                
+                <p class="max-w-2xl mx-auto text-slate-700 text-base sm:text-lg mb-8 font-normal leading-relaxed">
+                    Transforming your special moments with timeless artistry. Premier Indian Bridal, Sangeet, Engagement, Reception & High-Definition Party Makeovers customized just for you.
+                </p>
+
+                <!-- Action CTA Group -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I%20would%20like%20to%20book%20a%20bridal/event%20makeup%20slot!" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-maroon-800 to-maroon-700 hover:from-maroon-900 hover:to-maroon-800 text-gold-300 font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1 border border-gold-500/40">
+                        <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
+                        <span class="tracking-wider uppercase text-sm">Chat on WhatsApp (+91 7856958344)</span>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/the_nb_glowup?mdxt=bGszd2J2Mjk2bHlj" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-white/90 hover:bg-white text-maroon-800 font-bold px-8 py-4 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-1 border border-gold-300">
+                        <i class="fa-brands fa-instagram text-2xl text-pink-600"></i>
+                        <span class="tracking-wider uppercase text-sm">View Instagram Profile</span>
+                    </a>
+                </div>
+
+                <!-- Feature Badges -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div class="glass-card p-4 rounded-2xl shadow-sm text-center">
+                        <i class="fa-solid fa-gem text-gold-600 text-2xl mb-2"></i>
+                        <h3 class="font-serif font-bold text-xs uppercase tracking-wider text-maroon-900">HD & 3D Airbrush</h3>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl shadow-sm text-center">
+                        <i class="fa-solid fa-[#000] fa-crown text-gold-600 text-2xl mb-2"></i>
+                        <h3 class="font-serif font-bold text-xs uppercase tracking-wider text-maroon-900">Royal Bridal Styling</h3>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl shadow-sm text-center">
+                        <i class="fa-solid fa-spa text-gold-600 text-2xl mb-2"></i>
+                        <h3 class="font-serif font-bold text-xs uppercase tracking-wider text-maroon-900">Skin Prep & Draping</h3>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl shadow-sm text-center">
+                        <i class="fa-solid fa-[#000] fa-location-dot text-gold-600 text-2xl mb-2"></i>
+                        <h3 class="font-serif font-bold text-xs uppercase tracking-wider text-maroon-900">On-Location Services</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ARTIST JUNNU SECTION -->
+        <section id="about" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Artist Portrait / Decorative Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gold-300 group">
+                            <!-- Artist Showcase Image Placeholder with Soft Warm Gradient fallback -->
+                            <img src="https://placehold.co/600x800/4A0B18/F4D388?text=Artist+Junnu+%7C+The+NB+Glowup" alt="Makeup Artist Junnu" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                                <span class="font-script text-2xl text-gold-300">Lead Makeup Artist</span>
+                                <h3 class="font-serif text-3xl font-bold tracking-wide">JUNNU</h3>
+                                <p class="text-xs text-rose-100 font-light mt-1">Specialist in Traditional & Modern Indian Bridal Transformations</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Aesthetic Badge -->
+                        <div class="absolute -bottom-6 -right-6 glass-card p-4 rounded-2xl shadow-xl flex items-center space-x-3 hidden sm:flex">
+                            <div class="w-12 h-12 bg-maroon-800 rounded-full flex items-center justify-center text-gold-300">
+                                <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-serif font-bold text-maroon-900 text-sm">100% Customized Look</p>
+                                <p class="text-xs text-slate-500">Premium International Brands</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 text-gold-600 uppercase tracking-widest text-xs font-bold bg-gold-100 px-3 py-1 rounded-full">
+                            <i class="fa-solid fa-[#000] fa-sparkles"></i>
+                            <span>About The Artist</span>
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-maroon-900 leading-tight">
+                            Crafting Every Bride's Dream Look with Perfection & Grace
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed text-base">
+                            Welcome to <strong class="text-maroon-800">The NB Glowup</strong>, founded by visionary makeup artist <strong>Junnu</strong>. We specialize in creating flawless, radiant, and long-lasting makeup for Indian brides, engagement ceremonies, sangeet nights, and glam party events.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-base">
+                            From soft romantic pastel looks for daytime pheras to bold, royal traditional maharani glam with intricate dupatta draping and saree styling, Junnu accentuates your natural beauty without over-masking your features.
+                        </p>
+
+                        <!-- Key Highlights -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center text-maroon-800 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm">Waterproof & Sweat-proof</h4>
+                                    <p class="text-xs text-slate-500">Built to sustain long wedding rituals and humidity.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center text-maroon-800 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm">Complete Bridal Styling</h4>
+                                    <p class="text-xs text-slate-500">Hairdo, Dupatta/Saree Draping, Jewelry fixing & Bindi art.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center text-maroon-800 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm">Premium Cosmetics</h4>
+                                    <p class="text-xs text-slate-500">Using top luxury global beauty brands for skin safety.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center text-maroon-800 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-slate-900 text-sm">Venue Travel Available</h4>
+                                    <p class="text-xs text-slate-500">On-site services at your home, hotel, or resort venue.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <a href="#contact" class="inline-flex items-center space-x-2 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold px-6 py-3 rounded-xl transition shadow-md">
+                                <span>Get Free Consultation</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES & EVENT MAKEUP CATEGORIES -->
+        <section id="services" class="py-20 bg-rose-50/70 border-y border-gold-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="font-script text-3xl text-gold-600">Tailored Glamour</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon-900 uppercase tracking-wider">Makeup Services For All Events</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1: Grand Royal Bridal -->
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition duration-300 border border-gold-300/50 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300 shadow-md">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-3">Royal Bridal HD / Airbrush</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                The ultimate bridal look designed for your main wedding day. Includes skin hydration prep, 3D HD/Airbrush base, intricate bindi art, lashes, hair styling, and royal dupatta setting.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-700 space-y-2 mb-6 border-t border-gold-200 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Premium Lash Extensions</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Double Dupatta Draping</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Jewelry & Matha Patti Fixing</span></li>
+                        </ul>
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I'm%20interested%20in%20Royal%20Bridal%20Makeup." target="_blank" class="w-full py-3 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold rounded-xl text-center text-xs uppercase tracking-wider transition">Inquire Package</a>
+                    </div>
+
+                    <!-- Service 2: Engagement & Roka -->
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition duration-300 border border-gold-300/50 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300 shadow-md">
+                                <i class="fa-solid fa-ring"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-3">Engagement & Roka Glam</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Elegant, soft, luminous makeup focusing on highlighted cheekbones, soft smokey or glitter eyes, paired with gorgeous soft curls or modern sleek hairstyles.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-700 space-y-2 mb-6 border-t border-gold-200 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Dewy / Glass Finish Look</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Lehenga / Gown Styling</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Hair Accessories Setting</span></li>
+                        </ul>
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I'm%20interested%20in%20Engagement%20Makeup." target="_blank" class="w-full py-3 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold rounded-xl text-center text-xs uppercase tracking-wider transition">Inquire Package</a>
+                    </div>
+
+                    <!-- Service 3: Sangeet & Mehendi -->
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition duration-300 border border-gold-300/50 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300 shadow-md">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-3">Sangeet & Mehendi Look</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Vibrant, colorful, and smudge-proof makeup engineered to stay intact through hours of dance performances and festivities. Floral hair styling included!
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-700 space-y-2 mb-6 border-t border-gold-200 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Smudge-Proof & Long Lasting</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Floral Braid / Bun Styling</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Pop Color Eyes & Lips</span></li>
+                        </ul>
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I'm%20interested%20in%20Sangeet/Mehendi%20Makeup." target="_blank" class="w-full py-3 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold rounded-xl text-center text-xs uppercase tracking-wider transition">Inquire Package</a>
+                    </div>
+
+                    <!-- Service 4: Reception Night -->
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition duration-300 border border-gold-300/50 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300 shadow-md">
+                                <i class="fa-solid fa-wine-glass-empty"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-3">Reception Cocktail Glam</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                High-octane glam with dramatic winged eyeliner, defined contours, glittering pigments, and sophisticated up-dos or Hollywood waves for reception evening.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-700 space-y-2 mb-6 border-t border-gold-200 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>High Definition Camera Finish</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Hollywood Glam Waves / Bun</span></li>
+                        </ul>
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I'm%20interested%20in%20Reception%20Makeup." target="_blank" class="w-full py-3 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold rounded-xl text-center text-xs uppercase tracking-wider transition">Inquire Package</a>
+                    </div>
+
+                    <!-- Service 5: Party Makeup & Guests -->
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition duration-300 border border-gold-300/50 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300 shadow-md">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-3">Sider & Party Makeup</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Gorgeous makeover packages for bridesmaids, mother of the bride/groom, and sisters. Quick, elegant, and photo-ready for all family members.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-700 space-y-2 mb-6 border-t border-gold-200 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Group & Family Discounts</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Hairstyling & Saree Draping</span></li>
+                        </ul>
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I'm%20interested%20in%20Party/Bridesmaid%20Makeup." target="_blank" class="w-full py-3 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold rounded-xl text-center text-xs uppercase tracking-wider transition">Inquire Package</a>
+                    </div>
+
+                    <!-- Service 6: Pre-Wedding Shoot -->
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-2xl transition duration-300 border border-gold-300/50 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300 shadow-md">
+                                <i class="fa-solid fa-camera-retro"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-3">Pre-Wedding Shoots</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Versatile looks customized for outdoor, indoor, or destination pre-wedding photo shoots. Quick touch-ups and look changes included.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-700 space-y-2 mb-6 border-t border-gold-200 pt-4">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Natural Light Optimization</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-sparkles text-gold-600"></i><span>Multiple Outfit Changes</span></li>
+                        </ul>
+                        <a href="https://wa.me/917856958344?text=Hi%20Junnu,%20I'm%20interested%20in%20Pre-wedding%20shoot%20makeup." target="_blank" class="w-full py-3 bg-maroon-800 hover:bg-maroon-900 text-gold-300 font-bold rounded-xl text-center text-xs uppercase tracking-wider transition">Inquire Package</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO / LOOKBOOK GALLERY SECTION -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="font-script text-3xl text-gold-600">Real Brides & Transformations</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon-900 uppercase tracking-wider">The Bridal Lookbook</h2>
+                    <p class="text-slate-600 text-sm mt-2">Explore recent glowing makeovers by Artist Junnu</p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Look 1 -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-gold-200">
+                        <img src="https://placehold.co/600x750/32060E/F4D388?text=Traditional+Red+Bridal+Glam" alt="Traditional Red Bridal Makeup" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-maroon-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
+                            <span class="text-gold-300 font-script text-xl">Royal Wedding</span>
+                            <h4 class="font-serif font-bold text-lg">Traditional Red Maharani Look</h4>
+                            <p class="text-xs text-rose-100 mt-1">Intricate bindi art, deep gold eye pigments & classic red lips.</p>
+                        </div>
+                    </div>
+
+                    <!-- Look 2 -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-gold-200">
+                        <img src="https://placehold.co/600x750/4A0B18/FFFFFF?text=Soft+Pastel+Engagement+Look" alt="Soft Pastel Makeup" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-maroon-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
+                            <span class="text-gold-300 font-script text-xl">Engagement Glam</span>
+                            <h4 class="font-serif font-bold text-lg">Dewy Soft Pastel Glow</h4>
+                            <p class="text-xs text-rose-100 mt-1">Soft nude-pink tones with natural luminous finish.</p>
+                        </div>
+                    </div>
+
+                    <!-- Look 3 -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-gold-200">
+                        <img src="https://placehold.co/600x750/6B1124/F4D388?text=Smokey+Sangeet+Glitter+Eyes" alt="Smokey Eyes Makeup" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-maroon-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
+                            <span class="text-gold-300 font-script text-xl">Sangeet Night</span>
+                            <h4 class="font-serif font-bold text-lg">Glitter Smokey Eyes</h4>
+                            <p class="text-xs text-rose-100 mt-1">Bold dramatic eyes with sleek high-fashion updo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Look 4 -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-gold-200">
+                        <img src="https://placehold.co/600x750/32060E/D4AF37?text=South+Indian+Kanjeevaram+Bride" alt="South Indian Bridal Look" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-maroon-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
+                            <span class="text-gold-300 font-script text-xl">Traditional Elegance</span>
+                            <h4 class="font-serif font-bold text-lg">South Indian Temple Jewelry Glam</h4>
+                            <p class="text-xs text-rose-100 mt-1">Matte skin base, gajra hair braid & traditional saree draping.</p>
+                        </div>
+                    </div>
+
+                    <!-- Look 5 -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-gold-200">
+                        <img src="https://placehold.co/600x750/4A0B18/F4D388?text=Cocktail+Reception+Glam" alt="Reception Evening Makeup" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-maroon-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
+                            <span class="text-gold-300 font-script text-xl">Reception Night</span>
+                            <h4 class="font-serif font-bold text-lg">Hollywood Glam Waves & Gloss</h4>
+                            <p class="text-xs text-rose-100 mt-1">Radiant glass skin with defined sculpt and glossy lips.</p>
+                        </div>
+                    </div>
+
+                    <!-- Look 6 -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-gold-200">
+                        <img src="https://placehold.co/600x750/6B1124/FFFFFF?text=Floral+Mehendi+Vibe" alt="Mehendi Floral Makeup" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-maroon-900/90 via-maroon-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6 text-white">
+                            <span class="text-gold-300 font-script text-xl">Mehendi Vibes</span>
+                            <h4 class="font-serif font-bold text-lg">Fresh Floral Soft Makeup</h4>
+                            <p class="text-xs text-rose-100 mt-1">Lightweight HD airbrush with vibrant blush accents.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Instagram Direct Link Callout -->
+                <div class="mt-12 text-center">
+                    <a href="https://www.instagram.com/the_nb_glowup?mdxt=bGszd2J2Mjk2bHlj" target="_blank" class="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                        <span class="tracking-wider uppercase text-sm">Follow @the_nb_glowup on Instagram for Daily Updates</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="py-20 bg-maroon-900 text-white relative overflow-hidden">
+            <!-- Animated Background Glow -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="font-script text-3xl text-gold-300">Words of Love</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold uppercase tracking-wider text-white">Happy Brides & Clients</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Review 1 -->
+                    <div class="dark-glass p-8 rounded-3xl relative">
+                        <div class="text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-rose-100 text-sm leading-relaxed mb-6 italic">
+                            "Junnu did my bridal makeup for my wedding in October. I was amazed by how natural yet royal I looked! My makeup didn't smudge at all despite hours of rituals. Highly recommend The NB Glowup!"
+                        </p>
+                        <div class="flex items-center space-x-3 border-t border-gold-500/20 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-gold-500 text-maroon-900 flex items-center justify-center font-bold">P</div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-gold-300">Pooja Sharma</h4>
+                                <span class="text-[11px] text-rose-200">Bridal Makeup</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="dark-glass p-8 rounded-3xl relative">
+                        <div class="text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-rose-100 text-sm leading-relaxed mb-6 italic">
+                            "Booked Junnu for my engagement and Sangeet look. She understood my skin tone perfectly and gave me the most stunning eye makeup. Everyone at the venue complimented my glow!"
+                        </p>
+                        <div class="flex items-center space-x-3 border-t border-gold-500/20 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-gold-500 text-maroon-900 flex items-center justify-center font-bold">A</div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-gold-300">Ananya Verma</h4>
+                                <span class="text-[11px] text-rose-200">Engagement & Sangeet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="dark-glass p-8 rounded-3xl relative">
+                        <div class="text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-rose-100 text-sm leading-relaxed mb-6 italic">
+                            "Junnu and her team handled makeup for me and my 4 bridesmaids! She is super punctual, polite, and extremely skilled with drape setting and bindi perfection."
+                        </p>
+                        <div class="flex items-center space-x-3 border-t border-gold-500/20 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-gold-500 text-maroon-900 flex items-center justify-center font-bold">R</div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-gold-300">Riya Kapoor</h4>
+                                <span class="text-[11px] text-rose-200">Bride & Party Group</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & BOOKING SECTION -->
+        <section id="contact" class="py-20 bg-gradient-to-b from-rose-50 to-rose-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="font-script text-3xl text-gold-600">Reserve Your Special Date</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon-900 uppercase tracking-wider">Contact Artist Junnu</h2>
+                    <p class="text-slate-600 text-sm mt-2">Get in touch for dates availability, pricing packages & consultations</p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Contact Cards -->
+                    <div class="lg:col-span-5 space-y-6">
+                        
+                        <!-- Artist Detail Card -->
+                        <div class="glass-card p-8 rounded-3xl shadow-lg border border-gold-300">
+                            <div class="flex items-center space-x-4 mb-6">
+                                <div class="w-14 h-14 bg-maroon-800 text-gold-300 rounded-2xl flex items-center justify-center text-2xl shadow-md">
+                                    <i class="fa-solid fa-user-ninja"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">Artist Name</span>
+                                    <h3 class="font-serif text-2xl font-bold text-maroon-900">Junnu</h3>
+                                    <p class="text-xs text-slate-500">Owner & Master Makeup Artist</p>
+                                </div>
+                            </div>
+
+                            <hr class="border-gold-200 my-4">
+
+                            <!-- Direct Links -->
+                            <div class="space-y-4">
+                                <a href="https://wa.me/917856958344" target="_blank" class="flex items-center space-x-4 p-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition">
+                                    <div class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-emerald-700 uppercase">WhatsApp Direct</span>
+                                        <p class="font-bold text-sm sm:text-base text-emerald-950">+91 7856958344</p>
+                                    </div>
+                                </a>
+
+                                <a href="https://www.instagram.com/the_nb_glowup?mdxt=bGszd2J2Mjk2bHlj" target="_blank" class="flex items-center space-x-4 p-3 rounded-2xl bg-pink-50 hover:bg-pink-100 text-pink-900 border border-pink-200 transition">
+                                    <div class="w-10 h-10 bg-pink-600 text-white rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-pink-700 uppercase">Instagram Profile</span>
+                                        <p class="font-bold text-sm sm:text-base text-pink-950">@the_nb_glowup</p>
+                                    </div>
+                                </a>
+
+                                <div class="flex items-center space-x-4 p-3 rounded-2xl bg-amber-50 border border-amber-200">
+                                    <div class="w-10 h-10 bg-gold-600 text-white rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-gold-700 uppercase">Service Location</span>
+                                        <p class="font-bold text-xs sm:text-sm text-slate-800">Available For Studio & On-Venue Destination Weddings</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Interactive Inquiry Form -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card p-8 sm:p-10 rounded-3xl shadow-xl border border-gold-300">
+                            <h3 class="font-serif text-2xl font-bold text-maroon-900 mb-2">Send Booking Inquiry</h3>
+                            <p class="text-xs text-slate-500 mb-6">Fill out your details below to generate a pre-formatted WhatsApp message for instant response.</p>
+
+                            <form id="inquiryForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Your Full Name *</label>
+                                        <input type="text" id="clientName" required placeholder="e.g. Priya Sharma" class="w-full px-4 py-3 rounded-xl border border-gold-300 focus:ring-2 focus:ring-maroon-800 focus:outline-none text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone Number *</label>
+                                        <input type="tel" id="clientPhone" required placeholder="e.g. +91 9876543210" class="w-full px-4 py-3 rounded-xl border border-gold-300 focus:ring-2 focus:ring-maroon-800 focus:outline-none text-sm">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Event Type *</label>
+                                        <select id="eventType" class="w-full px-4 py-3 rounded-xl border border-gold-300 focus:ring-2 focus:ring-maroon-800 focus:outline-none text-sm bg-white">
+                                            <option value="Bridal Makeup">Bridal Makeup (Main Wedding)</option>
+                                            <option value="Engagement / Roka">Engagement / Roka</option>
+                                            <option value="Sangeet / Mehendi">Sangeet / Mehendi</option>
+                                            <option value="Reception Glam">Reception Evening Glam</option>
+                                            <option value="Party / Bridesmaid">Party / Bridesmaid Makeup</option>
+                                            <option value="Pre-Wedding Shoot">Pre-Wedding Shoot</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Event Date *</label>
+                                        <input type="date" id="eventDate" required class="w-full px-4 py-3 rounded-xl border border-gold-300 focus:ring-2 focus:ring-maroon-800 focus:outline-none text-sm bg-white">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Event Venue Location</label>
+                                    <input type="text" id="eventLocation" placeholder="City or Venue Name" class="w-full px-4 py-3 rounded-xl border border-gold-300 focus:ring-2 focus:ring-maroon-800 focus:outline-none text-sm">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Special Requirements / Notes</label>
+                                    <textarea id="eventNotes" rows="3" placeholder="Number of people requiring makeup, specific requirements..." class="w-full px-4 py-3 rounded-xl border border-gold-300 focus:ring-2 focus:ring-maroon-800 focus:outline-none text-sm"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center space-x-2 text-sm uppercase tracking-wider">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span>Send Inquiry via WhatsApp</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-maroon-950 text-white border-t border-gold-500/30 pt-12 pb-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-maroon-800">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 text-maroon-900 flex items-center justify-center font-serif font-bold text-xl">
+                            NB
+                        </div>
+                        <div>
+                            <span class="font-serif text-xl font-bold text-gold-300">THE NB GLOWUP</span>
+                            <p class="text-xs text-rose-200">By Artist Junnu</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center space-x-6">
+                        <a href="https://wa.me/917856958344" target="_blank" class="w-10 h-10 rounded-full bg-maroon-800 hover:bg-emerald-600 flex items-center justify-center text-white transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/the_nb_glowup?mdxt=bGszd2J2Mjk2bHlj" target="_blank" class="w-10 h-10 rounded-full bg-maroon-800 hover:bg-pink-600 flex items-center justify-center text-white transition">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-6 text-center text-xs text-rose-300/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p>© <span id="year"></span> The NB Glowup. All Rights Reserved. Designed for Artist Junnu.</p>
+                    <p class="text-[11px]">Contact: +91 7856958344 | Instagram: @the_nb_glowup</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC & CANVAS ANIMATIONS -->
+    <script>
+        // Set Year Dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submission - WhatsApp Direct Redirection
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const event = document.getElementById('eventType').value;
+            const date = document.getElementById('eventDate').value;
+            const location = document.getElementById('eventLocation').value || 'Not Specified';
+            const notes = document.getElementById('eventNotes').value || 'None';
+
+            const message = `*NEW MAKEUP INQUIRY - THE NB GLOWUP*%0A%0A` +
+                `*Client Name:* ${encodeURIComponent(name)}%0A` +
+                `*Contact:* ${encodeURIComponent(phone)}%0A` +
+                `*Event Type:* ${encodeURIComponent(event)}%0A` +
+                `*Event Date:* ${encodeURIComponent(date)}%0A` +
+                `*Venue/City:* ${encodeURIComponent(location)}%0A` +
+                `*Notes:* ${encodeURIComponent(notes)}`;
+
+            const whatsappUrl = `https://wa.me/917856958344?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Particle Canvas for Gold Glitter & Sparkles Animation
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 40;
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Sparkle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = -(Math.random() * 0.8 + 0.2);
+                this.opacity = Math.random();
+                this.fadeSpeed = Math.random() * 0.02 + 0.005;
+                this.color = Math.random() > 0.3 ? '#D4AF37' : '#FFF5D1'; // Gold or Champagne color
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.opacity += this.fadeSpeed;
+
+                if (this.opacity >= 1 || this.opacity <= 0) {
+                    this.fadeSpeed = -this.fadeSpeed;
+                }
+
+                if (this.y < 0 || this.opacity <= 0) {
+                    this.reset();
+                    this.y = canvas.height;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.opacity);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Add slight glow shadow
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = '#D4AF37';
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Sparkle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.onload = function() {
+            initParticles();
+            animateParticles();
+        };
+    </script>
+</body>
+</html>
